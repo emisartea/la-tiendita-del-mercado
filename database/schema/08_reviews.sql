@@ -8,7 +8,7 @@ CREATE TABLE reviews (
     user_id         NUMBER      NOT NULL,          -- FK a users.id
     rating          NUMBER(1)   NOT NULL,          -- 1 a 5
     title           VARCHAR2(150),
-    comment         CLOB,
+    comment_text    CLOB,                          -- antes se llamaba "comment"
     status          VARCHAR2(30) DEFAULT 'pendiente',  -- 'pendiente','aprobada','rechazada'
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at      TIMESTAMP
@@ -16,4 +16,3 @@ CREATE TABLE reviews (
 
 CREATE INDEX idx_reviews_product ON reviews(product_id);
 CREATE INDEX idx_reviews_user ON reviews(user_id);
--- Rese�as de productos
